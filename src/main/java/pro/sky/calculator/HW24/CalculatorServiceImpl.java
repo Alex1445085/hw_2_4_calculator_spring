@@ -1,5 +1,4 @@
 package pro.sky.calculator.HW24;
-
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
@@ -58,10 +57,3 @@ public class CalculatorServiceImpl implements CalculatorService {
         }
     }
 }
-
-
-
-
-
-
-
