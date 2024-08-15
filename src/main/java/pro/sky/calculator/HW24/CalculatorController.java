@@ -7,30 +7,28 @@ import org.springframework.web.bind.annotation.*;
 public class CalculatorController {
     CalculatorServiceImpl calculate = new CalculatorServiceImpl();
 
-    int counter = 0;
-
     @GetMapping
     public String hello() {
-        return calculate.hello() + ", " + counter;
+        return calculate.hello();
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
-        return calculate.menu("plus", num1, num2);
+    public String plus(@RequestParam("num1") Double num1, @RequestParam("num2") Double  num2) {
+        return calculate.plus(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
-        return calculate.menu("minus", num1, num2);
+    public String minus(@RequestParam("num1") Double num1, @RequestParam("num2") Double num2) {
+        return calculate.minus(num1, num2);
     }
 
     @GetMapping("/multiply")
-    public String multiply(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
-        return calculate.menu("multiply", num1, num2);
+    public String multiply(@RequestParam("num1") Double num1, @RequestParam("num2") Double num2) {
+        return calculate.multiply(num1, num2);
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
-        return calculate.menu("divide", num1, num2);
+    public String divide(@RequestParam("num1") Double num1, @RequestParam("num2") Double num2) {
+        return calculate.divide(num1, num2);
     }
 }
