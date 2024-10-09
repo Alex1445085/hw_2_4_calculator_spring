@@ -23,7 +23,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public String divide(Double num1, Double num2) {
         if (num2 == 0) {
-            return "Деление на 0 недопустимо!";
+             throw new ZeroDivideException(num2);
         } else {
             return "result: " + num1 + " / " + num2 + " = " + (num1 / num2);
         }
